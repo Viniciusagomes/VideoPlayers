@@ -1,0 +1,48 @@
+{
+  "titulo": "homem-na-lua",
+  "voz": "pt-BR-AntonioNeural",
+  "velocidade": "+15%",
+  "tom": "-6Hz",
+  "pausa_entre_cenas": 0.35,
+  "cenas": [
+    {
+      "texto": "Julho de 1969. Seiscentos milhões de pessoas assistiram ao homem pisar na Lua. Mas... e se tudo não passou de uma encenação?",
+      "imagens": ["S69-39961", "as11-40-5878"]
+    },
+    {
+      "rotulo": "01 · AS FITAS APAGADAS",
+      "texto": "As fitas originais da transmissão? A própria NASA admite: foram apagadas e reutilizadas. Justo o registro do momento mais importante da história.",
+      "imagens": ["S69-39563", "S69-39593"]
+    },
+    {
+      "rotulo": "02 · A BANDEIRA",
+      "texto": "Repare na bandeira. Ela parece tremular... num lugar onde não existe vento.",
+      "imagens": ["as11-40-5875"]
+    },
+    {
+      "rotulo": "03 · O CÉU VAZIO",
+      "texto": "No céu lunar, nenhuma estrela. Em centenas de fotos... nem uma sequer.",
+      "imagens": ["as11-40-5903"]
+    },
+    {
+      "rotulo": "04 · AS SOMBRAS",
+      "texto": "As sombras apontam para direções diferentes. Como, se a única luz ali era o Sol?",
+      "imagens": ["as11-37-5505"]
+    },
+    {
+      "rotulo": "05 · A RADIAÇÃO",
+      "texto": "E o cinturão de Van Allen: uma faixa de radiação intensa ao redor da Terra, atravessada com os computadores de 1969.",
+      "imagens": ["as17-148-22727"]
+    },
+    {
+      "rotulo": "06 · NUNCA MAIS",
+      "texto": "Mais de cinquenta anos depois, ninguém nunca mais pisou na Lua. Por quê?",
+      "imagens": ["as08-14-2383"]
+    },
+    {
+      "texto": "E você? Acredita que o homem chegou à Lua? Se sim, deixe seu relato nos comentários.",
+      "imagens": ["as11-40-5903"],
+      "final": true
+    }
+  ]
+}
