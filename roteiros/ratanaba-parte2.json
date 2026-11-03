@@ -1,0 +1,61 @@
+{
+  "titulo": "ratanaba-parte2",
+  "voz": "pt-BR-AntonioNeural",
+  "velocidade": "+15%",
+  "tom": "-6Hz",
+  "pausa_entre_cenas": 0.35,
+  "cenas": [
+    {
+      "rotulo": "PARTE 2",
+      "texto": "Na parte um, você conheceu Ratanabá: a suposta cidade de 450 milhões de anos escondida sob a Amazônia. Agora... a verdade.",
+      "imagens": [
+        "commons:Sunset at Amazon rainforest, Brazil - 2026 21.jpg",
+        "commons:Aerial view of the Amazon Rainforest.jpg"
+      ]
+    },
+    {
+      "rotulo": "01 · A DATA IMPOSSÍVEL",
+      "destaque": "450 MILHÕES\nDE ANOS",
+      "texto": "Há 450 milhões de anos, a vida estava quase toda no fundo do mar. Não havia árvores, nem dinossauros... e nenhum ser humano.",
+      "imagens": [
+        "commons:Fossil Trilobite.jpg"
+      ]
+    },
+    {
+      "rotulo": "02 · NEM AMAZÔNIA EXISTIA",
+      "texto": "A própria Amazônia nem existia. A América do Sul fazia parte de um supercontinente chamado Gondwana, em outra posição do planeta.",
+      "imagens": [
+        "as17-148-22727"
+      ]
+    },
+    {
+      "rotulo": "03 · ZERO EVIDÊNCIAS",
+      "texto": "Arqueólogos e geólogos são unânimes: nenhuma ruína, nenhum artefato, nenhum estudo científico jamais comprovou Ratanabá.",
+      "imagens": [
+        "commons:Serra do Roncador by EricoMabellini.jpg"
+      ]
+    },
+    {
+      "rotulo": "04 · A VERDADE É MAIS INCRÍVEL",
+      "texto": "Mas a Amazônia esconde, sim, cidades perdidas. Com lasers disparados de aviões, cientistas encontraram cidades de até 2.500 anos, com estradas e praças.",
+      "imagens": [
+        "commons:Fazenda Colorada.jpg",
+        "commons:Amazon rainforest (Satellite picture) - 2.jpg"
+      ]
+    },
+    {
+      "rotulo": "05 · OS VERDADEIROS CONSTRUTORES",
+      "texto": "Quem as ergueu não foram seres de outro mundo. Foram os povos indígenas, que moldaram a floresta por milênios.",
+      "imagens": [
+        "commons:Parque Nacional de Anavilhanas GuilhonAmazônia (15).jpg"
+      ]
+    },
+    {
+      "texto": "E você? Já tinha ouvido falar de Ratanabá? Comente o que achou e siga para mais mistérios.",
+      "imagens": [
+        "commons:Sunset at Amazon rainforest, Brazil - 2026.jpg"
+      ],
+      "final": true
+    }
+  ]
+}

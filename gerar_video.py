@@ -47,7 +47,10 @@ def baixar_imagem(ref: str) -> Path:
     local = Path(ref)
     if local.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp") and local.exists():
         return local
+    if ref.startswith("commons:"):
+        return baixar_commons(ref[len("commons:"):])
     destino = CACHE / "imagens" / f"{ref}.jpg"
+    CREDITOS[ref] = f"{ref} — NASA (domínio público)"
     if destino.exists():
         return destino
     destino.parent.mkdir(parents=True, exist_ok=True)
@@ -59,6 +62,48 @@ def baixar_imagem(ref: str) -> Path:
     print(f"  baixando {ref}")
     with urllib.request.urlopen(url, context=ctx, timeout=60) as r:
         destino.write_bytes(r.read())
+    return destino
+
+
+CREDITOS = {}
+
+
+def _get(url, ctx, tentativas=5):
+    import time
+    for i in range(tentativas):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "VideoPlayersBot/1.0 (gerador de videos)"})
+            with urllib.request.urlopen(req, context=ctx, timeout=60) as r:
+                return r.read()
+        except Exception:
+            if i == tentativas - 1:
+                raise
+            time.sleep(8 * (i + 1))
+
+
+def baixar_commons(titulo: str) -> Path:
+    """Baixa uma imagem do Wikimedia Commons e registra autor/licença para os créditos."""
+    import re
+    import urllib.parse
+    nome = hashlib.sha1(titulo.encode()).hexdigest()[:12]
+    destino = CACHE / "imagens" / f"commons-{nome}.jpg"
+    meta = destino.with_suffix(".json")
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    ctx = ssl_ctx()
+    if not (destino.exists() and meta.exists()):
+        api = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(dict(
+            action="query", format="json", titles="File:" + titulo, prop="imageinfo",
+            iiprop="url|extmetadata", iiurlwidth=1920, iiextmetadatafilter="LicenseShortName|Artist"))
+        pagina = next(iter(json.loads(_get(api, ctx))["query"]["pages"].values()))
+        info = pagina["imageinfo"][0]
+        print(f"  baixando commons: {titulo}")
+        destino.write_bytes(_get(info.get("thumburl") or info["url"], ctx))
+        m = info.get("extmetadata", {})
+        autor = re.sub(r"<[^>]+>", "", m.get("Artist", {}).get("value", "desconhecido")).strip()
+        meta.write_text(json.dumps({"autor": autor, "licenca": m.get("LicenseShortName", {}).get("value", "")},
+                                   ensure_ascii=False))
+    m = json.loads(meta.read_text())
+    CREDITOS["commons:" + titulo] = f"\"{titulo}\" — {m['autor']}, {m['licenca']}, via Wikimedia Commons"
     return destino
 
 
@@ -196,10 +241,34 @@ class Legendas:
         self.cache[chave] = final
         return final
 
+    def destaque(self, texto):
+        chave = ("destaque", texto)
+        if chave not in self.cache:
+            linhas = texto.split("\n")
+            tam = 190
+            while True:
+                f = self.fonte(tam)
+                if max(f.getlength(l) for l in linhas) <= W - 100 or tam <= 80:
+                    break
+                tam -= 8
+            alt = int(tam * 1.25)
+            img = Image.new("RGBA", (W, alt * len(linhas) + 60), (0, 0, 0, 0))
+            d = ImageDraw.Draw(img)
+            for i, l in enumerate(linhas):
+                cor = AMARELO if i == 0 else (255, 255, 255)
+                d.text((W // 2, 30 + i * alt), l, font=f, fill=cor, anchor="ma", stroke_width=10, stroke_fill=(0, 0, 0))
+            sombra = Image.new("RGBA", img.size, (0, 0, 0, 0))
+            sombra.putalpha(img.getchannel("A").filter(ImageFilter.GaussianBlur(14)).point(lambda v: v * 0.7))
+            self.cache[chave] = Image.alpha_composite(sombra, img)
+        return self.cache[chave]
+
     def rotulo(self, texto):
         chave = ("rotulo", texto)
         if chave not in self.cache:
-            f = self.fonte(74)
+            tam = 74
+            while self.fonte(tam).getlength(texto) > W - 180 and tam > 40:
+                tam -= 4
+            f = self.fonte(tam)
             lw = int(f.getlength(texto))
             img = Image.new("RGBA", (lw + 70, 125), (0, 0, 0, 0))
             d = ImageDraw.Draw(img)
@@ -332,6 +401,15 @@ def main():
                 camada.putalpha(camada.getchannel("A").point(lambda v: int(v * a)))
                 quadro_img.alpha_composite(camada, (60 - int((1 - a) * 40), 230))
 
+        if c.get("destaque"):
+            dimg = leg.destaque(c["destaque"])
+            a = suave((tl - 0.15) / 0.35)
+            if a > 0:
+                esc = 1.25 - 0.25 * a
+                camada = dimg.resize((int(dimg.width * esc), int(dimg.height * esc)), Image.BILINEAR)
+                camada.putalpha(camada.getchannel("A").point(lambda v: int(v * a)))
+                quadro_img.alpha_composite(camada, ((W - camada.width) // 2, int(H * 0.36) - camada.height // 2))
+
         tv = t - c["inicio"]
         for b in c["blocos"]:
             if b["inicio"] <= tv < b["fim"]:
@@ -353,6 +431,11 @@ def main():
     ff.stdin.close()
     if ff.wait() != 0:
         sys.exit("ffmpeg falhou")
+    if CREDITOS:
+        cred = saida.with_name(saida.stem + "-creditos.txt")
+        cred.write_text("Créditos das imagens:\n" + "\n".join(f"- {v}" for v in dict.fromkeys(CREDITOS.values())) + "\n",
+                        encoding="utf-8")
+        print(f"Créditos: {cred}")
     print(f"Pronto: {saida}")
 
 

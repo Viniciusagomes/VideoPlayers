@@ -1,0 +1,61 @@
+{
+  "titulo": "ratanaba-parte1",
+  "voz": "pt-BR-AntonioNeural",
+  "velocidade": "+16%",
+  "tom": "-6Hz",
+  "pausa_entre_cenas": 0.35,
+  "cenas": [
+    {
+      "texto": "Debaixo da maior floresta do planeta, estaria escondida a cidade mais antiga do mundo. Seu nome... Ratanabá.",
+      "imagens": [
+        "commons:Aerial view of the Amazon Rainforest.jpg",
+        "commons:Sunset at Amazon rainforest, Brazil - 2026.jpg"
+      ]
+    },
+    {
+      "rotulo": "01 · A ORIGEM",
+      "texto": "Em 2022, essa história explodiu nas redes. Quem a divulgou foi a Dakila Pesquisas, um grupo de Mato Grosso do Sul liderado por Urandir Fernandes de Oliveira.",
+      "imagens": [
+        "commons:Parque Nacional de Anavilhanas GuilhonAmazônia (1).jpg"
+      ]
+    },
+    {
+      "rotulo": "02 · A CAPITAL DO MUNDO",
+      "destaque": "450 MILHÕES\nDE ANOS",
+      "texto": "Segundo o grupo, Ratanabá teria sido erguida há 450 milhões de anos, como a capital de um império que dominava a Terra inteira.",
+      "imagens": [
+        "commons:Arquipélago de Anavilhanas 12.jpg"
+      ]
+    },
+    {
+      "rotulo": "03 · OS MURIL",
+      "texto": "Seus construtores? Uma civilização chamada Muril, com uma tecnologia muito além da nossa.",
+      "imagens": [
+        "commons:Jardim do Silêncio na Serra do Roncador 2.JPG"
+      ]
+    },
+    {
+      "rotulo": "04 · OS TÚNEIS",
+      "texto": "E sob a floresta, túneis gigantescos ligariam Ratanabá a outras cidades perdidas, espalhadas pelo planeta.",
+      "imagens": [
+        "commons:Amazon rainforest (Satellite picture) - 2.jpg"
+      ]
+    },
+    {
+      "rotulo": "05 · A CIDADE Z",
+      "texto": "E ela não seria a primeira cidade perdida do Brasil. Em 1925, o explorador Percy Fawcett entrou na mata do Mato Grosso atrás de uma cidade misteriosa... e nunca mais voltou.",
+      "imagens": [
+        "commons:PercyFawcett.jpg",
+        "commons:Serra do Roncador by EricoMabellini.jpg"
+      ]
+    },
+    {
+      "destaque": "COMENTE\n“PARTE 2”",
+      "texto": "Mas, se Ratanabá existe, por que nenhum cientista jamais a encontrou? Curta e comente parte 2 para descobrir.",
+      "imagens": [
+        "commons:Sunset at Amazon rainforest, Brazil - 2026 21.jpg"
+      ],
+      "final": true
+    }
+  ]
+}
