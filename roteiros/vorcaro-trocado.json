@@ -1,0 +1,107 @@
+{
+  "titulo": "vorcaro-trocado",
+  "voz": "pt-BR-AntonioNeural",
+  "velocidade": "+18%",
+  "tom": "-6Hz",
+  "pausa_entre_cenas": 0.3,
+  "cenas": [
+    {
+      "destaque": "TROCADO\nNA PRISÃO?",
+      "texto": "Será que Daniel Vorcaro foi trocado na prisão? Cabelo, olhos, boca... ele parece outra pessoa. Mas, para entender esse mistério, você precisa conhecer a história.",
+      "imagens": [
+        {
+          "id": "commons:Daniel Vorcaro - 2024.jpg",
+          "foco_y": 0.3
+        }
+      ]
+    },
+    {
+      "rotulo": "PARTE 1 · QUEM É VORCARO",
+      "texto": "Primeiro: quem é Daniel Vorcaro? Um mineiro de Belo Horizonte, nascido em 1983. Em 2019, ele assumiu o pequeno Banco Máxima... e o transformou no Banco Master.",
+      "imagens": [
+        {
+          "id": "commons:Daniel Vorcaro - 2024.jpg",
+          "foco_y": 0.3
+        }
+      ]
+    },
+    {
+      "rotulo": "PARTE 1 · QUEM É VORCARO",
+      "destaque": "R$ 200 MILHÕES\n→ R$ 4,7 BILHÕES",
+      "texto": "Em cinco anos, o patrimônio do banco saltou de 200 milhões para 4,7 bilhões de reais. E Vorcaro virou símbolo de luxo: jatinhos, mansão em Trancoso e festas milionárias.",
+      "imagens": [
+        "commons:Praia do Espelho, Trancoso, Bahia.jpg"
+      ]
+    },
+    {
+      "rotulo": "PARTE 2 · O ESQUEMA",
+      "texto": "O segredo? CDBs que pagavam muito acima do mercado, protegidos pelo FGC até 250 mil reais por investidor.",
+      "imagens": [
+        "commons:Edifício \"Sede\" do Banco Central do Brasil em Brasília (cropped).jpg"
+      ]
+    },
+    {
+      "rotulo": "PARTE 2 · O ESQUEMA",
+      "destaque": "R$ 12 BILHÕES\nSOB SUSPEITA",
+      "texto": "Mas, segundo a Polícia Federal, parte desse dinheiro estava apoiada em créditos que não existiam. E o BRB, banco público de Brasília, comprou pelo menos 12 bilhões de reais dessas operações suspeitas.",
+      "imagens": [
+        "commons:Protestos contra o Banco Master.png"
+      ]
+    },
+    {
+      "rotulo": "PARTE 3 · A QUEDA",
+      "destaque": "17/11/2025",
+      "texto": "Em setembro de 2025, o Banco Central barra a venda do Master ao BRB. Em 17 de novembro, Vorcaro é preso em Guarulhos, prestes a embarcar num jatinho para Malta. A defesa diz que ele ia a Dubai, encontrar investidores.",
+      "imagens": [
+        "commons:Novas viaturas (9614096845).jpg"
+      ]
+    },
+    {
+      "rotulo": "PARTE 3 · A QUEDA",
+      "destaque": "R$ 41 BILHÕES",
+      "texto": "Quase ao mesmo tempo, o Banco Central liquida o Master. O FGC precisa cobrir cerca de 41 bilhões de reais: o maior resgate da sua história.",
+      "imagens": [
+        "commons:Edifício sede do Banco Central do Brasil (16011634694).jpg"
+      ]
+    },
+    {
+      "rotulo": "PARTE 3 · A QUEDA",
+      "texto": "Solto dias depois, ele volta à prisão em março de 2026, suspeito de ameaças, corrupção e lavagem de dinheiro. O caso respinga em políticos e ministros do STF, que negam irregularidades. A defesa fala em conspiração.",
+      "imagens": [
+        "commons:Supreme Federal Court of Brazil.jpg"
+      ]
+    },
+    {
+      "rotulo": "O MISTÉRIO",
+      "texto": "Então, fotos dele na prisão vazaram. Sem barba, cabelo curto, rosto mais fino... e a internet começou a desconfiar.",
+      "imagens": [
+        {
+          "id": "commons:Daniel Vorcaro - 2024.jpg",
+          "foco_y": 0.2
+        }
+      ]
+    },
+    {
+      "rotulo": "O MISTÉRIO",
+      "texto": "A explicação? Raspar a barba e cortar o cabelo é padrão na entrada da prisão. E sem barba, sem pose e sob luz dura, qualquer rosto muda muito.",
+      "imagens": [
+        "commons:Hospital no Complexo Penitenciário da Papuda será permanente (49927309342).jpg"
+      ]
+    },
+    {
+      "comparacao": {
+        "antes": "commons:Daniel Vorcaro - 2024.jpg",
+        "depois": null,
+        "foco_y": 0.15
+      },
+      "texto": "E aí? Será que o Vorcaro foi trocado na prisão? Comente sua opinião e siga para a próxima história.",
+      "imagens": [
+        {
+          "id": "commons:Daniel Vorcaro - 2024.jpg",
+          "foco_y": 0.3
+        }
+      ],
+      "final": true
+    }
+  ]
+}

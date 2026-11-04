@@ -84,6 +84,7 @@ def _get(url, ctx, tentativas=5):
 def baixar_commons(titulo: str) -> Path:
     """Baixa uma imagem do Wikimedia Commons e registra autor/licença para os créditos."""
     import re
+    import time
     import urllib.parse
     nome = hashlib.sha1(titulo.encode()).hexdigest()[:12]
     destino = CACHE / "imagens" / f"commons-{nome}.jpg"
@@ -91,11 +92,17 @@ def baixar_commons(titulo: str) -> Path:
     destino.parent.mkdir(parents=True, exist_ok=True)
     ctx = ssl_ctx()
     if not (destino.exists() and meta.exists()):
-        api = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(dict(
-            action="query", format="json", titles="File:" + titulo, prop="imageinfo",
-            iiprop="url|extmetadata", iiurlwidth=1920, iiextmetadatafilter="LicenseShortName|Artist"))
-        pagina = next(iter(json.loads(_get(api, ctx))["query"]["pages"].values()))
-        info = pagina["imageinfo"][0]
+        def consulta(largura):
+            api = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(dict(
+                action="query", format="json", titles="File:" + titulo, prop="imageinfo",
+                iiprop="url|size|extmetadata", iiurlwidth=largura, iiextmetadatafilter="LicenseShortName|Artist"))
+            return next(iter(json.loads(_get(api, ctx))["query"]["pages"].values()))["imageinfo"][0]
+        info = consulta(1920)
+        if info["width"] <= 1920:
+            # usa um tamanho de miniatura padrão (originais pequenos são limitados pelo Wikimedia)
+            menores = [l for l in (1280, 960, 500) if l < info["width"]]
+            info = consulta(menores[0]) if menores else info
+        time.sleep(1.5)
         print(f"  baixando commons: {titulo}")
         destino.write_bytes(_get(info.get("thumburl") or info["url"], ctx))
         m = info.get("extmetadata", {})
@@ -107,14 +114,14 @@ def baixar_commons(titulo: str) -> Path:
     return destino
 
 
-def preparar_base(caminho: Path, foco_x=0.5, folga=1.16) -> Image.Image:
+def preparar_base(caminho: Path, foco_x=0.5, folga=1.16, foco_y=0.5) -> Image.Image:
     """Recorta para 9:16 (com folga para o zoom), aplica tratamento de 'filme antigo'."""
     img = Image.open(caminho).convert("RGB")
     bw, bh = int(W * folga), int(H * folga)
     escala = max(bw / img.width, bh / img.height)
     img = img.resize((math.ceil(img.width * escala), math.ceil(img.height * escala)), Image.LANCZOS)
     x0 = int((img.width - bw) * foco_x)
-    y0 = (img.height - bh) // 2
+    y0 = int((img.height - bh) * foco_y)
     img = img.crop((x0, y0, x0 + bw, y0 + bh))
     a = np.asarray(img).astype(np.float32) / 255.0
     cinza = a @ np.array([0.299, 0.587, 0.114], dtype=np.float32)
@@ -278,6 +285,36 @@ class Legendas:
         return self.cache[chave]
 
 
+def painel_comparacao(cfg):
+    """Dois quadros lado a lado: ANTES e DEPOIS (sem foto de DEPOIS => silhueta com '?')."""
+    pw, ph, gap, topo = 470, 680, 40, 150
+    img = Image.new("RGBA", (W, ph + topo + 20), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    f = ImageFont.truetype(str(FONTE), 92)
+    x0 = (W - 2 * pw - gap) // 2
+    for i, (rotulo, ref) in enumerate([("ANTES", cfg.get("antes")), ("DEPOIS", cfg.get("depois"))]):
+        x = x0 + i * (pw + gap)
+        if ref:
+            ft = Image.open(baixar_imagem(ref)).convert("RGB")
+            esc = max(pw / ft.width, ph / ft.height)
+            ft = ft.resize((math.ceil(ft.width * esc), math.ceil(ft.height * esc)), Image.LANCZOS)
+            fy = cfg.get("foco_y", 0.35)
+            ox, oy = (ft.width - pw) // 2, int((ft.height - ph) * fy)
+            ft = ft.crop((ox, oy, ox + pw, oy + ph))
+        else:
+            ft = Image.new("RGB", (pw, ph), (18, 18, 22))
+            dd = ImageDraw.Draw(ft)
+            dd.ellipse((pw // 2 - 110, 120, pw // 2 + 110, 380), fill=(45, 45, 52))
+            dd.rounded_rectangle((pw // 2 - 200, 400, pw // 2 + 200, ph + 80), 120, fill=(45, 45, 52))
+            dd.text((pw // 2, 250), "?", font=ImageFont.truetype(str(FONTE), 260), fill=AMARELO, anchor="mm",
+                    stroke_width=8, stroke_fill=(0, 0, 0))
+        img.paste(ft, (x, topo))
+        d.rectangle((x - 6, topo - 6, x + pw + 5, topo + ph + 5), outline=(255, 255, 255), width=6)
+        d.text((x + pw // 2, 20), rotulo, font=f, fill=AMARELO if i else (255, 255, 255), anchor="ma",
+               stroke_width=7, stroke_fill=(0, 0, 0))
+    return img
+
+
 # ---------------------------------------------------------------- montagem
 def suave(x):
     x = min(max(x, 0.0), 1.0)
@@ -328,8 +365,11 @@ def main():
     print("3/4 Imagens")
     for c in cenas:
         c["bases"] = [preparar_base(baixar_imagem(r if isinstance(r, str) else r["id"]),
-                                    0.5 if isinstance(r, str) else r.get("foco_x", 0.5))
+                                    0.5 if isinstance(r, str) else r.get("foco_x", 0.5),
+                                    foco_y=0.5 if isinstance(r, str) else r.get("foco_y", 0.5))
                       for r in c["imagens"]]
+        if c.get("comparacao"):
+            c["painel"] = painel_comparacao(c["comparacao"])
 
     print("4/4 Renderizando vídeo")
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
@@ -409,6 +449,13 @@ def main():
                 camada = dimg.resize((int(dimg.width * esc), int(dimg.height * esc)), Image.BILINEAR)
                 camada.putalpha(camada.getchannel("A").point(lambda v: int(v * a)))
                 quadro_img.alpha_composite(camada, ((W - camada.width) // 2, int(H * 0.36) - camada.height // 2))
+
+        if c.get("painel") is not None:
+            a = suave((tl - 0.1) / 0.5)
+            if a > 0:
+                camada = c["painel"].copy()
+                camada.putalpha(camada.getchannel("A").point(lambda v: int(v * a)))
+                quadro_img.alpha_composite(camada, (0, 330 + int((1 - a) * 60)))
 
         tv = t - c["inicio"]
         for b in c["blocos"]:
