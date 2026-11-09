@@ -1,0 +1,20 @@
+{
+  "titulo": "alfredo-parte3",
+  "abertura": "PARTE 3\nA CIDADE DOS ETs",
+  "cta": "SIGA PARA\nMAIS HISTÓRIAS",
+  "falas": [
+    {"voz": "narrador", "cena": "devolucao", "texto": "Na parte dois, o seu Alfredo passou pelos testes dos alienígenas e voltou... diferente."},
+    {"voz": "narrador", "cena": "bar_dia", "texto": "Naquele mesmo dia, entrou no Bar do Zé e pediu... um suco de laranja."},
+    {"voz": "narrador", "cena": "cidade_choque", "texto": "A cidade parou. O homem que todo mundo jurava que ia beber até o fim da vida largou a pinga de um dia pro outro."},
+    {"voz": "alfredo2", "cena": "alfredo_praca", "texto": "Eu fui levado por seres de outro planeta. Não sei se eram deuses ou o quê... mas eles me devolveram a razão."},
+    {"voz": "narrador", "cena": "religiosos", "texto": "O padre, o pastor e a mãe de santo, cada um com a sua fé, torceram o nariz. E, pela primeira vez, concordaram em alguma coisa:"},
+    {"voz": "coro", "cena": "religiosos", "texto": "Esse trem de deus astronauta não existe, não!"},
+    {"voz": "narrador", "cena": "turismo", "texto": "Mas a notícia correu. Primeiro vieram os curiosos, depois a televisão... depois os ônibus de turistas."},
+    {"voz": "narrador", "cena": "turismo", "texto": "Cafundó das Gerais virou a nova Varginha: ET na praça, disco voador no telhado e pão de queijo em formato de alienígena."},
+    {"voz": "narrador", "cena": "alfredo_rico", "texto": "E o seu Alfredo? Ficou rico. Hoje manda mais na cidade do que o próprio prefeito."},
+    {"voz": "alfredo2", "cena": "alfredo_rico", "texto": "Prefeito, anota aí: mais um mirante pros visitantes!"},
+    {"voz": "narrador", "cena": "cleide_final", "texto": "E desde então, tem uma frase que todo mundo em Cafundó das Gerais repete..."},
+    {"voz": "cleide", "cena": "cleide_final", "texto": "Eu vi, uai! Era os deus astronauta! Agora eu acredito, sô... e vô ficá rica iguar o seu Alfredo!"},
+    {"voz": "narrador", "cena": "fim", "texto": "Pronto. Fim. E se o Moreira jurou... quem sou eu pra duvidar?", "final": true}
+  ]
+}

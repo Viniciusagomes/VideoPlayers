@@ -1,0 +1,22 @@
+{
+  "titulo": "alfredo-parte1",
+  "abertura": "PARTE 1\nO PINGUÇO E A LUZ",
+  "cta": "COMENTE\n“PARTE 2”",
+  "falas": [
+    {"voz": "narrador", "cena": "cidade_aerea", "texto": "Essa história quem contou foi o Moreira. E ele jura de pé junto que é verdade."},
+    {"voz": "narrador", "cena": "cidade_aerea", "texto": "Interior de Minas Gerais. Cafundó das Gerais: uma cidadezinha onde todo mundo conhece todo mundo... e onde, de vez em quando, alguém vê uma luz estranha no céu."},
+    {"voz": "narrador", "cena": "cidade_rua", "texto": "Uns dizem que é disco voador. Outros dizem que é a mistura de pinguinha com café coado forte."},
+    {"voz": "narrador", "cena": "bar", "texto": "E ninguém era mais famoso por isso do que o seu Alfredo. Pinguço de carteirinha, cliente número um do Bar do Zé."},
+    {"voz": "alfredo", "cena": "bar", "texto": "Zé, põe mais uma aí, que é só pra esquentar o peito!"},
+    {"voz": "narrador", "cena": "bar", "texto": "Quando o seu Alfredo dizia que tinha visto alguma coisa, a cidade inteira caía na risada."},
+    {"voz": "cleide", "cena": "cleide", "texto": "Eu vi, uai! Era os deus astronauta! Agora eu acredito, sô... e vô ficá rica iguar o seu Alfredo!"},
+    {"voz": "narrador", "cena": "cleide", "texto": "Calma, dona Cleide, a história nem chegou nessa parte!"},
+    {"voz": "narrador", "cena": "estrada", "texto": "Numa noite sem lua, o seu Alfredo voltava pra casa, trocando as pernas pela estrada de terra..."},
+    {"voz": "narrador", "cena": "luz_distante", "texto": "quando viu, lá longe, depois do pasto, uma luz. Forte, colorida, piscando.", "sfx": "ufo"},
+    {"voz": "alfredo", "cena": "alfredo_close", "texto": "Ô, trem bão! Será que é o caminhão da cerveja?"},
+    {"voz": "narrador", "cena": "corrida", "texto": "E o seu Alfredo saiu correndo. Embalado pela pinga, não sentia cansaço nenhum: corria feito um menino de vinte anos!"},
+    {"voz": "narrador", "cena": "abducao", "texto": "Chegou tão perto que a luz... puxou ele pra cima!", "sfx": "raio"},
+    {"voz": "alfredo", "cena": "abducao", "texto": "Ê, laiá! Me solta, sô!"},
+    {"voz": "narrador", "cena": "nave_sobe", "texto": "E o seu Alfredo sumiu no céu de Minas. O que aconteceu lá dentro? Comenta parte dois que eu te conto!", "final": true}
+  ]
+}

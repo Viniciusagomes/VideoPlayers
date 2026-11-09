@@ -35,3 +35,16 @@ python gerar_video.py roteiros/homem-na-lua.json
 - `rotulo` (opcional): texto exibido no topo durante a cena.
 - `final` (opcional): escurece a imagem para destacar a chamada final.
 - Outras vozes masculinas: `pt-BR-AntonioNeural`; femininas: `pt-BR-FranciscaNeural`, `pt-BR-ThalitaNeural`.
+
+## Histórias em 3D low-poly (`gerar_3d.py`)
+
+Gera vídeos de animação 3D (personagens e cenários feitos de polígonos) com uma voz diferente para cada personagem.
+
+```bash
+cd render3d && npm install && cd ..   # three.js (o Chromium do Playwright faz o render)
+python gerar_3d.py historias/alfredo-parte1.json
+```
+
+- `historias/*.json`: o roteiro. Cada fala tem `voz` (narrador, alfredo, alfredo2, alien, cleide, coro), `cena` e `texto`; opcionais: `sfx` (ufo, raio, scan) e `final`.
+- `render3d/mundo.js`: o mundo 3D (cidade, nave, personagens) e as cenas/câmeras de cada `cena`.
+- As vozes estão em `VOZES`, no início de `gerar_3d.py`.

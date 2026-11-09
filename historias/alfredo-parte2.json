@@ -1,0 +1,23 @@
+{
+  "titulo": "alfredo-parte2",
+  "abertura": "PARTE 2\nOS TESTES DOS ETs",
+  "cta": "COMENTE\n“PARTE 3”",
+  "falas": [
+    {"voz": "narrador", "cena": "nave_sobe", "texto": "Na parte um, o seu Alfredo, o maior pinguço de Cafundó das Gerais, foi abduzido por uma luz misteriosa."},
+    {"voz": "narrador", "cena": "nave_interior", "texto": "Ele acordou num lugar que não era deste mundo. Luzes pra todo lado, máquinas apitando... e eles.", "sfx": "ufo"},
+    {"voz": "alien", "cena": "aliens", "texto": "Espécime humano número quatro mil e sete. Iniciar os testes."},
+    {"voz": "alfredo", "cena": "alfredo_mesa", "texto": "Ô, moço verde, cês têm uma pinguinha aí?"},
+    {"voz": "narrador", "cena": "teste_ciencia", "texto": "Primeiro, os testes científicos. Mediram, escanearam e analisaram cada pedacinho do seu Alfredo.", "sfx": "scan"},
+    {"voz": "alien", "cena": "teste_ciencia", "texto": "Nível de álcool no sangue: inexplicável."},
+    {"voz": "narrador", "cena": "teste_qi", "texto": "Depois, o teste de inteligência. Mostraram um triângulo, um círculo e um quadrado."},
+    {"voz": "alfredo", "cena": "teste_qi", "texto": "Fácil! É um torresmo, um pão de queijo e uma rapadura!"},
+    {"voz": "narrador", "cena": "teste_dor", "texto": "E então, o teste mais cruel de todos: o teste da dor. Os alienígenas tiraram dele... o copo de cachaça."},
+    {"voz": "alfredo", "cena": "teste_dor", "texto": "Nãããão! Isso é tortura, sô!"},
+    {"voz": "cleide", "cena": "cleide", "texto": "Eu vi, uai! Era os deus astronauta! Agora eu acredito, sô... e vô ficá rica iguar o seu Alfredo!"},
+    {"voz": "narrador", "cena": "cleide", "texto": "Dona Cleide, a senhora nem tava lá dentro!"},
+    {"voz": "narrador", "cena": "transformacao", "texto": "No fim, os ETs ligaram uma última máquina. Um raio azul atravessou a cabeça do seu Alfredo...", "sfx": "raio"},
+    {"voz": "narrador", "cena": "devolucao", "texto": "e devolveram ele no mesmo pasto, de manhãzinha. Mas tinha alguma coisa muito diferente."},
+    {"voz": "alfredo2", "cena": "alfredo_esperto", "texto": "Bom dia. Curioso... sinto uma clareza mental absolutamente extraordinária."},
+    {"voz": "narrador", "cena": "alfredo_esperto", "texto": "O que aconteceu com o seu Alfredo? Comenta parte três pra ver o final!", "final": true}
+  ]
+}

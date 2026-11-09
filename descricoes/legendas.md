@@ -137,3 +137,88 @@ Será que Daniel Vorcaro foi trocado na prisão? 🤔 O caso Banco Master explic
 ```
 Olhando o antes e depois... vocês acham que é a mesma pessoa? 👀 Comenta "MESMO" ou "TROCADO" 👇 E se quiser a parte 2 com tudo o que ainda pode acontecer no caso, curte esse comentário!
 ```
+
+---
+
+## 5. Seu Alfredo e os Deuses Astronautas — Parte 1
+
+### Legenda
+
+```
+PARTE 1 — O Pinguço e a Luz 🛸🍶
+
+Interior de Minas Gerais. Em Cafundó das Gerais, todo mundo conhece todo mundo... e de vez em quando alguém vê uma luz estranha no céu. 👀
+
+O seu Alfredo, pinguço oficial do Bar do Zé, viu uma luz lá depois do pasto e saiu correndo atrás dela feito um menino de 20 anos. Só que dessa vez... a luz levou ele junto! 😱
+
+E a dona Cleide jura que viu tudo, uai! 😂
+
+👉 Comenta "PARTE 2" que eu solto a continuação!
+
+⚠️ História fictícia e de humor, baseada no causo que o Moreira contou (e jura que é verdade).
+
+#deusesastronautas #ovni #discovoador #minasgerais #humor #historia #animacao3d #et #reels
+```
+
+### Primeiro comentário
+
+```
+Se fosse na sua cidade, quem seria o "seu Alfredo"? 😂👽 Marca ele aqui (ou comenta PARTE 2 que a continuação já tá pronta 🛸)
+```
+
+---
+
+## 6. Seu Alfredo e os Deuses Astronautas — Parte 2
+
+### Legenda
+
+```
+PARTE 2 — Os Testes dos ETs 👽🧪 (Parte 1 no perfil)
+
+Dentro da nave, o seu Alfredo passou pelos testes mais avançados do universo:
+🔬 o teste científico (nível de álcool no sangue: inexplicável)
+🔺 o teste de inteligência (triângulo, círculo e quadrado... ou torresmo, pão de queijo e rapadura?)
+😭 e o teste mais cruel de todos: o teste da dor... tiraram a cachaça dele!
+
+Mas depois de um raio azul na cabeça, ele voltou pro pasto... DIFERENTE. 🤓
+
+👉 Comenta "PARTE 3" pra ver o final!
+
+⚠️ História fictícia e de humor.
+
+#deusesastronautas #alienigena #et #minasgerais #humor #animacao3d #historia #reels
+```
+
+### Primeiro comentário
+
+```
+Sinceramente... qual teste você ia reprovar? 🔬🔺😭 Eu já ia perder no da cachaça 😂 Comenta PARTE 3!
+```
+
+---
+
+## 7. Seu Alfredo e os Deuses Astronautas — Parte 3 (final)
+
+### Legenda
+
+```
+PARTE 3 — A Cidade dos ETs 🛸🏙️ (Partes 1 e 2 no perfil)
+
+O seu Alfredo voltou da nave, largou a pinga de um dia pro outro e começou a falar bonito. A cidade inteira parou! 😳
+
+O padre, o pastor e a mãe de santo, cada um com sua fé, não acreditaram... mas os turistas sim! Cafundó das Gerais virou a nova Varginha: ET na praça, disco voador no telhado e pão de queijo em formato de alienígena. 👽🧀
+
+E o seu Alfredo? Ficou rico e hoje manda mais que o prefeito. 😎
+
+"Eu vi, uai! Era os deus astronauta!" 🗣️
+
+⚠️ História fictícia e de humor, sem a intenção de ofender nenhuma crença.
+
+#deusesastronautas #varginha #et #minasgerais #humor #animacao3d #historia #reels
+```
+
+### Primeiro comentário
+
+```
+E aí, você acredita nos deuses astronautas ou acha que foi o café com pinga? ☕🍶👽 Quer mais histórias assim? Me conta aqui qual causo da sua cidade eu devo animar!
+```
